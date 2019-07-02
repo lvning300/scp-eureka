@@ -1,0 +1,20 @@
+server:
+  port: 9010
+
+spring:
+  application:
+    name: SCP-EUREKA
+
+eureka:
+  instance:
+    hostname: peer1 #为ect/host下127.0.0.1
+    #hostname: localhost
+  client:
+    register-with-eureka: true # 不向自己注册
+    fetch-registry: true # 不检索服务
+    serviceUrl:
+      defaultZone: http://peer1:9009/eureka/
+      #defaultZone: http://localhost:8761/eureka/
+logging:
+  level:
+    com.lv.cloud: debug
